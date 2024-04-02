@@ -52,6 +52,96 @@ const Index = () => {
         Detailed Guide:
       </Heading>
 
+      <Heading as="h3" size="md" marginBottom="10px">
+        HTML Form:
+      </Heading>
+      <Code marginBottom="20px">
+        {`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Valuation Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="valuationForm">
+        <label for="annualRevenue">Annual Revenue:</label>
+        <input type="number" id="annualRevenue" required>
+
+        <label for="profitMargin">Profit Margin (%):</label>
+        <input type="number" id="profitMargin" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="valuationResult"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+        `}
+      </Code>
+
+      <Heading as="h3" size="md" marginBottom="10px">
+        CSS (style.css):
+      </Heading>
+      <Code marginBottom="20px">
+        {`
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#valuationForm {
+    margin-bottom: 20px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#valuationResult {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+        `}
+      </Code>
+
+      <Heading as="h3" size="md" marginBottom="10px">
+        JavaScript (script.js):
+      </Heading>
+      <Code marginBottom="20px">
+        {`
+document.getElementById('valuationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const annualRevenue = document.getElementById('annualRevenue').value;
+    const profitMargin = document.getElementById('profitMargin').value;
+
+    // Example calculation - replace with your formula
+    const valuation = (annualRevenue * profitMargin / 100) * 2.5;
+
+    document.getElementById('valuationResult').innerText = \`Estimated Business Valuation: $\${valuation.toFixed(2)}\`;
+});
+        `}
+      </Code>
+
       <Heading as="h2" size="lg" marginBottom="10px">
         5. Additional Features:
       </Heading>
