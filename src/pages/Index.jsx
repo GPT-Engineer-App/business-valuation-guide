@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, FormControl, FormLabel, Input, Button, Text, UnorderedList, ListItem, Code, Image, Select } from "@chakra-ui/react";
+import { Box, Heading, FormControl, FormLabel, Input, Button, Text, UnorderedList, ListItem, Code, Image, Select, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from "@chakra-ui/react";
 
 const Index = () => {
   const [annualRevenue, setAnnualRevenue] = useState("");
@@ -214,6 +214,123 @@ document.getElementById('valuationForm').addEventListener('submit', function(e) 
           <Text>Estimated Business Valuation: ${valuation}</Text>
         </Box>
       )}
+
+      <Heading as="h2" size="xl" marginTop="12" marginBottom="6">
+        Business Valuation Tool Guide
+      </Heading>
+      <Accordion allowMultiple>
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">1. Frontend Setup</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <UnorderedList>
+              <ListItem>HTML form for user inputs.</ListItem>
+              <ListItem>JavaScript for handling form submission and calculation.</ListItem>
+              <ListItem>CSS for styling the form and results.</ListItem>
+            </UnorderedList>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">2. Backend Logic</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <UnorderedList>
+              <ListItem>A server-side language (e.g., PHP, Node.js) for complex calculations or database interactions, if needed.</ListItem>
+              <ListItem>API endpoints if the calculation is handled server-side.</ListItem>
+            </UnorderedList>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">3. Database (Optional)</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <Text>If storing user inputs or past valuations, a database like MySQL or MongoDB is needed.</Text>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">4. Security & Compliance</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <UnorderedList>
+              <ListItem>Implement HTTPS for secure data transmission.</ListItem>
+              <ListItem>Validate and sanitize inputs to prevent SQL injection or XSS attacks.</ListItem>
+            </UnorderedList>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">5. Additional Features</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <UnorderedList>
+              <ListItem>Option to download the valuation report as a PDF.</ListItem>
+              <ListItem>Integration with analytics to track usage.</ListItem>
+            </UnorderedList>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">6. User Guidance</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <Text>Include tooltips or a help section explaining how to use the tool.</Text>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">7. Optimization</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <UnorderedList>
+              <ListItem>Optimize for performance and responsiveness.</ListItem>
+              <ListItem>Regularly update the calculation logic based on market trends.</ListItem>
+            </UnorderedList>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              <Text fontWeight="bold">8. Legal Compliance</Text>
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            <Text>Ensure the tool complies with financial and data protection regulations.</Text>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
     </Box>
   );
 };
