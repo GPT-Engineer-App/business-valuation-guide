@@ -9,10 +9,16 @@ const Footer = () => {
         <Link href="/terms" color="teal.500" mr={4}>
           Terms of Service
         </Link>
-        <Link href="/privacy" color="teal.500">
+        <Link href="/privacy" color="teal.500" mr={4}>
           Privacy Policy
         </Link>
+        <Link href="#" color="teal.500">
+          Chat with Us
+        </Link>
       </Box>
+      <Text textAlign="center" mt={4}>
+        Have questions or need assistance? We're here to help!
+      </Text>
     </Box>
   );
 };

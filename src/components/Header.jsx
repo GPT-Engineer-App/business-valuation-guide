@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Flex, Spacer, Image, Link } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Image, Link, Button } from "@chakra-ui/react";
+import Chatbot from "./Chatbot";
 
 const Header = () => {
   return (
@@ -13,10 +14,14 @@ const Header = () => {
           About
         </Link>
         <Spacer />
+        <Button colorScheme="white" variant="outline" mr={4}>
+          Open Chatbot
+        </Button>
         <Link href="/contact" color="white" fontWeight="bold">
           Contact
         </Link>
       </Flex>
+      <Chatbot />
     </Box>
   );
 };
