@@ -179,6 +179,12 @@ document.getElementById('valuationForm').addEventListener('submit', function(e) 
             <option value="retail">Retail</option>
             <option value="finance">Finance</option>
             <option value="healthcare">Healthcare</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="energy">Energy</option>
+            <option value="realestate">Real Estate</option>
+            <option value="construction">Construction</option>
+            <option value="hospitality">Hospitality</option>
+            <option value="transportation">Transportation</option>
           </Select>
         </FormControl>
         <FormControl marginBottom="4">
@@ -215,9 +221,14 @@ document.getElementById('valuationForm').addEventListener('submit', function(e) 
         </Box>
       )}
 
-      <Heading as="h2" size="xl" marginTop="12" marginBottom="6">
-        Business Valuation Tool Guide
-      </Heading>
+      {valuation && (
+        <Box marginTop="4">
+          <Button colorScheme="blue" marginRight="4">
+            Export
+          </Button>
+          <Button colorScheme="blue">Share</Button>
+        </Box>
+      )}
       <Accordion allowMultiple>
         <AccordionItem>
           <AccordionButton>
