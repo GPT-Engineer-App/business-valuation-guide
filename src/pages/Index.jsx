@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, FormControl, FormLabel, Input, Button, Text, UnorderedList, ListItem, Code, Image } from "@chakra-ui/react";
+import { Box, Heading, FormControl, FormLabel, Input, Button, Text, UnorderedList, ListItem, Code, Image, Select } from "@chakra-ui/react";
 
 const Index = () => {
   const [annualRevenue, setAnnualRevenue] = useState("");
@@ -13,7 +13,7 @@ const Index = () => {
   };
 
   return (
-    <Box maxWidth="800px" margin="0 auto" padding="20px">
+    <Box maxWidth="800px" margin="0 auto" padding="20px" backgroundColor="gray.50">
       <Heading as="h1" size="xl" marginBottom="20px">
         Business Valuation Tool Guide
       </Heading>
@@ -172,20 +172,45 @@ document.getElementById('valuationForm').addEventListener('submit', function(e) 
         Business Valuation Tool
       </Heading>
       <form onSubmit={handleSubmit}>
-        <FormControl marginBottom="10px">
+        <FormControl marginBottom="4">
+          <FormLabel>Industry Sector:</FormLabel>
+          <Select placeholder="Select industry" required>
+            <option value="tech">Technology</option>
+            <option value="retail">Retail</option>
+            <option value="finance">Finance</option>
+            <option value="healthcare">Healthcare</option>
+          </Select>
+        </FormControl>
+        <FormControl marginBottom="4">
+          <FormLabel>Years in Business:</FormLabel>
+          <Input type="number" required />
+        </FormControl>
+        <FormControl marginBottom="4">
+          <FormLabel>Number of Employees:</FormLabel>
+          <Input type="number" required />
+        </FormControl>
+        <FormControl marginBottom="4">
+          <FormLabel>Assets:</FormLabel>
+          <Input type="number" required />
+        </FormControl>
+        <FormControl marginBottom="4">
+          <FormLabel>Liabilities:</FormLabel>
+          <Input type="number" required />
+        </FormControl>
+        <FormControl marginBottom="4">
           <FormLabel>Annual Revenue:</FormLabel>
           <Input type="number" value={annualRevenue} onChange={(e) => setAnnualRevenue(e.target.value)} required />
         </FormControl>
-        <FormControl marginBottom="10px">
+        <FormControl marginBottom="4">
           <FormLabel>Profit Margin (%):</FormLabel>
           <Input type="number" value={profitMargin} onChange={(e) => setProfitMargin(e.target.value)} required />
         </FormControl>
-        <Button type="submit" colorScheme="green">
+        <Button type="submit" colorScheme="blue">
           Calculate
         </Button>
       </form>
       {valuation && (
-        <Box marginTop="20px" padding="20px" backgroundColor="gray.100" borderRadius="5px">
+        <Box marginTop="8" padding="6" backgroundColor="blue.50" borderRadius="md">
           <Text>Estimated Business Valuation: ${valuation}</Text>
         </Box>
       )}
