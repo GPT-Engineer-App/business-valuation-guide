@@ -88,6 +88,10 @@ const Index = () => {
             <AccordionIcon />
           </AccordionButton>
           <AccordionPanel pb={4}>
+            <Code>{`
+import React, { useState } from "react";
+import { Box, Heading, FormControl, FormLabel, Input, Button, Text, UnorderedList, ListItem, Code, Image, Select, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from "@chakra-ui/react";
+            `}</Code>
             <UnorderedList>
               <ListItem>HTML form for user inputs.</ListItem>
               <ListItem>JavaScript for handling form submission and calculation.</ListItem>
@@ -104,6 +108,13 @@ const Index = () => {
             <AccordionIcon />
           </AccordionButton>
           <AccordionPanel pb={4}>
+            <Code>{`
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const calculatedValuation = ((annualRevenue * profitMargin) / 100) * 2.5;
+    setValuation(calculatedValuation.toFixed(2));
+  };
+            `}</Code>
             <UnorderedList>
               <ListItem>A server-side language (e.g., PHP, Node.js) for complex calculations or database interactions, if needed.</ListItem>
               <ListItem>API endpoints if the calculation is handled server-side.</ListItem>
@@ -146,6 +157,16 @@ const Index = () => {
             <AccordionIcon />
           </AccordionButton>
           <AccordionPanel pb={4}>
+            <Code>{`
+      {valuation && (
+        <Box marginTop="4">
+          <Button colorScheme="blue" marginRight="4">
+            Export
+          </Button>
+          <Button colorScheme="blue">Share</Button>
+        </Box>
+      )}
+            `}</Code>
             <UnorderedList>
               <ListItem>Option to download the valuation report as a PDF.</ListItem>
               <ListItem>Integration with analytics to track usage.</ListItem>
